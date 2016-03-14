@@ -15,5 +15,36 @@
   "bugs": {
     "url": "https://github.com/abhishek1234321/Foundation-6-Shortcodes/issues"
   },
-  "homepage": "https://github.com/abhishek1234321/Foundation-6-Shortcodes#readme"
+  "homepage": "https://github.com/abhishek1234321/Foundation-6-Shortcodes#readme",
+  "devDependencies": {
+    "browser-sync": "*",
+    "del": "*",
+    "gulp": "*",
+    "gulp-autoprefixer": "*",
+    "gulp-cache": "*",
+    "gulp-combine-media-queries": "*",
+    "gulp-concat": "*",
+    "gulp-cssnano": "*",
+    "gulp-filter": "*",
+    "gulp-flatten": "*",
+    "gulp-imagemin": "*",
+    "gulp-jshint": "*",
+    "gulp-load-plugins": "*",
+    "gulp-newer": "*",
+    "gulp-notify": "*",
+    "gulp-phpcs": "*",
+    "gulp-pixrem": "*",
+    "gulp-plumber": "*",
+    "gulp-rename": "*",
+    "gulp-sass": "*",
+    "gulp-sourcemaps": "*",
+    "gulp-uglify": "*",
+    "gulp-util": "*",
+    "gulp-zip": "*",
+    "jshint": "*",
+    "jshint-stylish": "*",
+    "phplint": "*",
+    "run-sequence": "*",
+    "yargs": "*"
+  }
 }
