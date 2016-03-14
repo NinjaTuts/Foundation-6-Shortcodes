@@ -6,11 +6,11 @@
  * Loads and defines the internationalization files for this plugin
  * so that it is ready for translation.
  *
- * @link       http://www.liftoffllc.com
+ * @link       http://infiniteloop.co.in
  * @since      1.0.0
  *
- * @package    Lo_Core
- * @subpackage Lo_Core/includes
+ * @package    Foundation_6_Shortcodes
+ * @subpackage Foundation_6_Shortcodes/includes
  */
 
 /**
@@ -20,11 +20,11 @@
  * so that it is ready for translation.
  *
  * @since      1.0.0
- * @package    Lo_Core
- * @subpackage Lo_Core/includes
- * @author     Abhishek Jain <abhishek@liftoffllc.com>
+ * @package    Foundation_6_Shortcodes
+ * @subpackage Foundation_6_Shortcodes/includes
+ * @author     Abhishek Jain <abhi@infiniteloop.co.in>
  */
-class Lo_Core_i18n {
+class Foundation_6_Shortcodes_i18n {
 
 
 	/**
@@ -35,9 +35,9 @@ class Lo_Core_i18n {
 	public function load_plugin_textdomain() {
 
 		load_plugin_textdomain(
-			'lo-core',
+			'foundation-6-shortcodes',
 			false,
-			dirname( dirname( plugin_basename( LO_CORE__PLUGIN_FILE ) ) ) . '/languages/'
+			dirname( dirname( plugin_basename( FN6S__PLUGIN_FILE ) ) ) . '/languages/'
 		);
 
 	}

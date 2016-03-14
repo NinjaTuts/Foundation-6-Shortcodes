@@ -5,11 +5,11 @@
  *
  * This file is used to markup the public-facing aspects of the plugin.
  *
- * @link       http://www.liftoffllc.com
+ * @link       http://infiniteloop.co.in
  * @since      1.0.0
  *
- * @package    Lo_Core
- * @subpackage Lo_Core/public/partials
+ * @package    Foundation_6_Shortcodes
+ * @subpackage Foundation_6_Shortcodes/public/partials
  */
 ?>
 

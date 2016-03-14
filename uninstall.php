@@ -19,10 +19,10 @@
  * For more information, see the following discussion:
  * https://github.com/tommcfarlin/WordPress-Plugin-Boilerplate/pull/123#issuecomment-28541913
  *
- * @link       http://www.liftoffllc.com
+ * @link       http://infiniteloop.co.in
  * @since      1.0.0
  *
- * @package    Lo_Core
+ * @package    Foundation_6_Shortcodes
  */
 
 // If uninstall not called from WordPress, then exit.

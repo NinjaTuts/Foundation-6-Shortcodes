@@ -3,11 +3,11 @@
 /**
  * Fired during plugin deactivation
  *
- * @link       http://www.liftoffllc.com
+ * @link       http://infiniteloop.co.in
  * @since      1.0.0
  *
- * @package    Lo_Core
- * @subpackage Lo_Core/includes
+ * @package    Foundation_6_Shortcodes
+ * @subpackage Foundation_6_Shortcodes/includes
  */
 
 /**
@@ -16,11 +16,11 @@
  * This class defines all code necessary to run during the plugin's deactivation.
  *
  * @since      1.0.0
- * @package    Lo_Core
- * @subpackage Lo_Core/includes
- * @author     Abhishek Jain <abhishek@liftoffllc.com>
+ * @package    Foundation_6_Shortcodes
+ * @subpackage Foundation_6_Shortcodes/includes
+ * @author     Abhishek Jain <abhi@infiniteloop.co.in>
  */
-class Lo_Core_Deactivator {
+class Foundation_6_Shortcodes_Deactivator {
 
 	/**
 	 * Short Description. (use period)

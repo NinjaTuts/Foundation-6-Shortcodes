@@ -3,11 +3,11 @@
 /**
  * Register all actions and filters for the plugin
  *
- * @link       http://www.liftoffllc.com
+ * @link       http://infiniteloop.co.in
  * @since      1.0.0
  *
- * @package    Lo_Core
- * @subpackage Lo_Core/includes
+ * @package    Foundation_6_Shortcodes
+ * @subpackage Foundation_6_Shortcodes/includes
  */
 
 /**
@@ -17,11 +17,11 @@
  * the plugin, and register them with the WordPress API. Call the
  * run function to execute the list of actions and filters.
  *
- * @package    Lo_Core
- * @subpackage Lo_Core/includes
- * @author     Abhishek Jain <abhishek@liftoffllc.com>
+ * @package    Foundation_6_Shortcodes
+ * @subpackage Foundation_6_Shortcodes/includes
+ * @author     Abhishek Jain <abhi@infiniteloop.co.in>
  */
-class Lo_Core_Loader {
+class Foundation_6_Shortcodes_Loader {
 
 	/**
 	 * The array of actions registered with WordPress.

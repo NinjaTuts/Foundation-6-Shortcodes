@@ -16,9 +16,6 @@ var project 		= 'lo', // Project name, used for build zip.
 		'**/*.woff',
 		'**/*.woff2',
 
-		// include specific files and folders
-		'screenshot.png',
-
 		// exclude files and folders
 		'!node_modules/**/*',
 		'!**/*.map',

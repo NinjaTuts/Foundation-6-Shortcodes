@@ -1,6 +1,6 @@
 === Plugin Name ===
 Contributors: (this should be a list of wordpress.org userid's)
-Donate link: http://www.liftoffllc.com
+Donate link: http://infiniteloop.co.in
 Tags: comments, spam
 Requires at least: 3.0.1
 Tested up to: 3.4
@@ -43,7 +43,7 @@ This section describes how to install the plugin and get it working.
 
 e.g.
 
-1. Upload `lo-core.php` to the `/wp-content/plugins/` directory
+1. Upload `foundation-6-shortcodes.php` to the `/wp-content/plugins/` directory
 1. Activate the plugin through the 'Plugins' menu in WordPress
 1. Place `<?php do_action('plugin_name_hook'); ?>` in your templates
 
@@ -102,7 +102,7 @@ Unordered list:
 * something else
 * third thing
 
-Here's a link to [WordPress](http://wordpress.org/ "Your favorite software") and one to [Markdown's Syntax Documentation][markdown qsyntax].
+Here's a link to [WordPress](http://wordpress.org/ "Your favorite software") and one to [Markdown's Syntax Documentation][markdown syntax].
 Titles are optional, naturally.
 
 [markdown syntax]: http://daringfireball.net/projects/markdown/syntax
