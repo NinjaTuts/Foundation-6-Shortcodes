@@ -1,0 +1,19 @@
+{
+  "name": "lo-core",
+  "version": "1.0.0",
+  "description": "A Core Plugin For LO Theme",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/abhishek1234321/Foundation-6-Shortcodes.git"
+  },
+  "author": "Abhishek Jain",
+  "license": "GPL-2.0",
+  "bugs": {
+    "url": "https://github.com/abhishek1234321/Foundation-6-Shortcodes/issues"
+  },
+  "homepage": "https://github.com/abhishek1234321/Foundation-6-Shortcodes#readme"
+}
