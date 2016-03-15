@@ -4,53 +4,83 @@ Class FN6S_Columns {
 
 	public function __construct() {
 
-		add_shortcode( 'f6_col', array( $this, 'render' ) );
+		add_shortcode( 'fn_col', array( $this, 'render' ) );
 
 	}
 
-	public function render( $atts, $content = '' ) {
+	public function render( $atts, $content = null ) {
 
-		extract( shortcode_atts(
-			array(
-				'id'							=> '',
-				'class'						=> '',
-				'small'						=> 12,
-				'medium'					=> 12,
-				'large'						=> 12,
-				'align_top'				=> 'no',
-				'align_middle'		=> 'no',
-				'align_bottom'		=> 'no',
-				'align_stretch'		=> 'no',
-				'equalizer'				=> 'no'
-			), $atts )
-		);
+		$atts = shortcode_atts( array(
+			'id'										=> null,
+			'class'									=> null,
+			'style'									=> null,
+			'small'									=> null,
+			'medium'								=> null,
+			'large'									=> null,
+			'small_centered'				=> null,
+			'medium_centered'				=> null,
+			'large_centered'				=> null,
+		), $atts, 'fn_col' );
 
-		$id = ( $id ) ? ' id="' . $id . '"' : '';
+		$atts = array_map( 'trim', $atts );
+
+		if ( ! empty( $atts['id'] ) ) {
+			$atts['id'] = ' id="' . $atts['id'] . '" ';
+		} else {
+			$atts['id'] = ' ';
+		}
+
+		if ( ! empty( $atts['style'] ) ) {
+			$atts['style'] = ' style="' . $atts['style'] . '"';
+		}
 
 		// Columns in different breakpoints
-		$small = ( $small !== 12 ) ? 'small-' . $small : 'small-12';
-		$medium = ( $medium !== 12 ) ? ' medium-' . $medium : '';
-		$large = ( $large !== 12 ) ? ' large-' . $large : '';
+		$class = 'small-12';
 
-		$class = ( $class ) ? ' ' . $class : '';
+		if ( ! empty( $atts['small'] ) && $atts['small'] >= 1 && $atts['small'] <= 12 ) {
+			$class = 'small-' . $atts['small'];
+		}
 
-		// Vertical Alignment
-		$align_top = ( $align_top === 'yes' ) ? ' align-top' : '';
-		$align_middle = ( $align_middle === 'yes' ) ? ' align-middle' : '';
-		$align_bottom = ( $align_bottom === 'yes' ) ? ' align-bottom' : '';
-		$align_stretch = ( $align_stretch === 'yes' ) ? ' align-stretch' : '';
+		if ( ! empty( $atts['medium'] ) && $atts['medium'] >= 1 && $atts['medium'] <= 12 ) {
+			$class .= ' medium-' . $atts['medium'];
+		}
 
-		$equalizer = ( $equalizer === 'yes' ) ? ' data-equalizer-watch' : '';
+		if ( ! empty( $atts['large'] ) && $atts['large'] >= 1 && $atts['large'] <= 12 ) {
+			$class .= ' large-' . $atts['large'];
+		}
 
-		$size_classes = $small . $medium . $large;
-		$alignment_classes =  $align_top . $align_middle . $align_bottom . $align_stretch;
+		if ( 'yes' === strtolower( $atts['small_centered'] ) ) {
+			$class .= ' small-centered';
+		}
 
-		$class = $size_classes . $alignment_classes . ' columns' . $class;
-		$class = preg_replace('/\s+/', ' ', trim( $class) ); // Remove unnecessary whitespaces
+		if ( 'yes' === strtolower( $atts['medium_centered'] ) ) {
+			$class .= ' medium-centered';
+		}
 
-		$html  = '<div' . $id . ' class="' . $class . '"' . $equalizer . '>';
-		$html .= do_shortcode( $content );
-		$html .= '</div>';
+		if ( 'no' === strtolower( $atts['medium_centered'] ) ) {
+			$class .= ' medium-uncentered';
+		}
+
+		if ( 'yes' === strtolower( $atts['large_centered'] ) ) {
+			$class .= ' large-centered';
+		}
+
+		if ( 'no' === strtolower( $atts['large_centered'] ) ) {
+			$class .= ' large-uncentered';
+		}
+
+		if ( ! empty( $atts['class'] ) ) {
+			$atts['class'] = $class . ' columns ' . $atts['class'];
+		} else {
+			$atts['class'] = $class . ' columns';
+		}
+
+		$html = sprintf( '<div%sclass="%s"%s>%s</div>',
+			$atts['id'],
+			$atts['class'],
+			$atts['style'],
+			do_shortcode( $content ) 
+		);
 
 		return $html;
 

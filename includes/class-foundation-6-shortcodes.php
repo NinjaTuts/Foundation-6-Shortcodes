@@ -237,7 +237,7 @@ class Foundation_6_Shortcodes {
 	public function shortcodes_cleanup( $content ) {
 
 		// array of custom shortcodes requiring the fix 
-		$block = join( '|', array( 'row', 'col' ) );
+		$block = join( '|', array( 'fn_row', 'fn_col' ) );
 
 		// opening p tag and br tag
 		$content = preg_replace( "/(<p>)?\[($block)(\s[^\]]+)?\](<\/p>|<br \/>)?/", "[$2$3]", $content );
