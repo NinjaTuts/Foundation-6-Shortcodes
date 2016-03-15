@@ -72,6 +72,7 @@ class Foundation_6_Shortcodes {
 		$this->version = '1.0.0';
 
 		$this->load_dependencies();
+		$this->load_shortcodes();
 		$this->set_locale();
 		$this->define_admin_hooks();
 		$this->define_public_hooks();
@@ -100,26 +101,38 @@ class Foundation_6_Shortcodes {
 		 * The class responsible for orchestrating the actions and filters of the
 		 * core plugin.
 		 */
-		require_once plugin_dir_path( dirname( FN6S__PLUGIN_FILE ) ) . 'includes/class-foundation-6-shortcodes-loader.php';
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-foundation-6-shortcodes-loader.php';
 
 		/**
 		 * The class responsible for defining internationalization functionality
 		 * of the plugin.
 		 */
-		require_once plugin_dir_path( dirname( FN6S__PLUGIN_FILE ) ) . 'includes/class-foundation-6-shortcodes-i18n.php';
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-foundation-6-shortcodes-i18n.php';
 
 		/**
 		 * The class responsible for defining all actions that occur in the admin area.
 		 */
-		require_once plugin_dir_path( dirname( FN6S__PLUGIN_FILE ) ) . 'admin/class-foundation-6-shortcodes-admin.php';
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/class-foundation-6-shortcodes-admin.php';
 
 		/**
 		 * The class responsible for defining all actions that occur in the public-facing
 		 * side of the site.
 		 */
-		require_once plugin_dir_path( dirname( FN6S__PLUGIN_FILE ) ) . 'public/class-foundation-6-shortcodes-public.php';
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'public/class-foundation-6-shortcodes-public.php';
 
 		$this->loader = new Foundation_6_Shortcodes_Loader();
+
+	}
+
+	private function load_shortcodes() {
+
+		/**
+		 * The class responsible for orchestrating the actions and filters of the
+		 * core plugin.
+		 */
+		foreach( glob( plugin_dir_path( dirname( __FILE__ ) ) . '/shortcodes/**/*.php' ) as $filename ) {
+			require_once $filename;
+		}
 
 	}
 
@@ -178,7 +191,10 @@ class Foundation_6_Shortcodes {
 	 * @since    1.0.0
 	 */
 	public function run() {
+
 		$this->loader->run();
+		add_filter( 'the_content', array( $this, 'shortcodes_cleanup' ) );
+
 	}
 
 	/**
@@ -210,6 +226,27 @@ class Foundation_6_Shortcodes {
 	 */
 	public function get_version() {
 		return $this->version;
+	}
+
+	/**
+	 * Remove extra <p> </p> and <br /> tags from the shortcodes added by TinyMCE
+	 *
+	 * @since     1.0.0
+	 * @return    string    The content of the page/post
+	 */
+	public function shortcodes_cleanup( $content ) {
+
+		// array of custom shortcodes requiring the fix 
+		$block = join( '|', array( 'row', 'col' ) );
+
+		// opening p tag and br tag
+		$content = preg_replace( "/(<p>)?\[($block)(\s[^\]]+)?\](<\/p>|<br \/>)?/", "[$2$3]", $content );
+			
+		// closing p tag and br tag
+		$content = preg_replace( "/(<p>)?\[\/($block)](<\/p>|<br \/>)?/", "[/$2]", $content );
+
+		return $content;
+
 	}
 
 }

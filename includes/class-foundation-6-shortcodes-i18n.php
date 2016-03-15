@@ -37,7 +37,7 @@ class Foundation_6_Shortcodes_i18n {
 		load_plugin_textdomain(
 			'foundation-6-shortcodes',
 			false,
-			dirname( dirname( plugin_basename( FN6S__PLUGIN_FILE ) ) ) . '/languages/'
+			dirname( dirname( plugin_basename( __FILE__ ) ) ) . '/languages/'
 		);
 
 	}

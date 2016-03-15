@@ -36,7 +36,6 @@ var p = loadPlugins({
 	}
 });
 
-
 /**
  *
  * Copy CSS, SCSS and JS dependencies from bower_components to respective folders
@@ -53,7 +52,6 @@ gulp.task('copyBower', function() {
 	  .pipe(gulp.dest('./public/js'))
 		.pipe(p.notify({ message: 'Copied CSS & JS files from Bower', onLast: true }));
 });
-
 
 /**
  *

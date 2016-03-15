@@ -25,10 +25,10 @@ if ( ! defined( 'WPINC' ) ) {
 	die;
 }
 
+define( 'FOUNDATION__VERSION', '6.2.0' );
 define( 'FN6S__VERSION', '1.0.0' );
 define( 'FN6S__PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
 define( 'FN6S__PLUGIN_DIR_URL', plugin_dir_url( __FILE__ ) );
-define( 'FN6S__PLUGIN_FILE', __FILE__ );
 
 /**
  * The code that runs during plugin activation.
@@ -48,8 +48,8 @@ function deactivate_foundation_6_shortcodes() {
 	Foundation_6_Shortcodes_Deactivator::deactivate();
 }
 
-register_activation_hook( FN6S__PLUGIN_FILE, 'activate_foundation_6_shortcodes' );
-register_deactivation_hook( FN6S__PLUGIN_FILE, 'deactivate_foundation_6_shortcodes' );
+register_activation_hook( __FILE__, 'activate_foundation_6_shortcodes' );
+register_deactivation_hook( __FILE__, 'deactivate_foundation_6_shortcodes' );
 
 /**
  * The core plugin class that is used to define internationalization,
