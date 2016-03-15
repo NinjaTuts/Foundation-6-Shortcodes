@@ -10,15 +10,19 @@ The plugin is tested with `Foundation 6` and `WordPress 4.4`
 ## Usage
 
 ### Grid
-```
-[row]
-	[col small="6"]...[/col]
-    [col medium="6"]...[/col]
-    [col large="6"]...[/col]
-[/row]
-```
+	[fn_row]
+	    [fn_col small="6"]
+	    	...
+    	[/fn_col]
+	    [fn_col medium="6"]
+	    	...
+	    [/fn_col]
+	    [fn_col large="6"]
+	    	...
+	    [/fn_col]
+	[/fn_row]
 
-#### [row] parameters
+#### [fn_row] parameters
 
 | Attribute				| Description																					| Required	| Values							| Default		|
 | :-------------:	| :-------------------------------------------------: | :-------: | :-----------------:	| :-------: |
@@ -27,8 +31,16 @@ The plugin is tested with `Foundation 6` and `WordPress 4.4`
 | style						| Any inline styles you wish to add      							|   no     	|  any css properties |  null   	|
 | fluid						| Full width row (refer Foundation documentation)   	|   no     	|  yes   							|  null   	|
 
-#### [col] parameters
-
+#### [fn_col] parameters
+    [fn_col small="6"]
+    	...
+  	[/fn_col]
+    [fn_col medium="6"]
+    	...
+    [/fn_col]
+    [fn_col large="6"]
+    	...
+    [/fn_col]
 | Attribute				| Description																					| Required	| Values							| Default		|
 | :-------------:	| :-------------------------------------------------: | :-------: | :-----------------:	| :-------: |
 | id      				| An ID you wish to add 															|   no 	   	|  any id							|  null   	|
@@ -42,18 +54,23 @@ The plugin is tested with `Foundation 6` and `WordPress 4.4`
 | large_centered	| Center the column on large screen or not						|   no     	|  yes, no 						|  null   	|
 
 
-#### [subheader] parameters
+#### [fn_subheader] parameters
+    [fn_subheader type="3"]
+	    ...
+    [/fn_subheader]
 
 | Attribute				| Description																					| Required	| Values							| Default		|
 | :-------------:	| :-------------------------------------------------: | :-------: | :-----------------:	| :-------: |
 | id      				| An ID you wish to add 															|   no 	   	|  any id							|  null   	|
 | class         	| Any classes you wish to add      										|   no     	|  any class/classes	|  null   	|
 | style						| Any inline styles you wish to add      							|   no     	|  any css properties |  null   	|
-| type						| Heading Type h1-h6     															|   no     	|   1-6    						|  null   	|
+| type						| Heading Type h1-h6     															|   no     	|   1-6    						|  1   			|
 
 
-#### [lead] parameters
-
+#### [fn_lead] parameters
+    [fn_lead]
+	    ...
+    [/fn_lead]
 | Attribute				| Description																					| Required	| Values							| Default		|
 | :-------------:	| :-------------------------------------------------: | :-------: | :-----------------:	| :-------: |
 | id      				| An ID you wish to add 															|   no 	   	|  any id							|  null   	|
