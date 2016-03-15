@@ -1,10 +1,10 @@
 <?php
 
-Class FN6S_Row {
+Class FN6S_Lead {
 
 	public function __construct() {
 
-		add_shortcode( 'fn_row', array( $this, 'render' ) );
+		add_shortcode( 'fn_lead', array( $this, 'render' ) );
 
 	}
 
@@ -14,8 +14,7 @@ Class FN6S_Row {
 			'id'										=> null,
 			'class'									=> null,
 			'style'									=> null,
-			'fluid' 								=> null,
-		), $atts, 'fn_row' );
+		), $atts, 'fn_lead' );
 
 		// Remove whitespaces from starting and ending of shortcode attribtues
 		$atts = array_map( 'trim', $atts );
@@ -34,11 +33,7 @@ Class FN6S_Row {
 			$atts['style'] = ' style="' . $atts['style'] . '"';
 		}
 
-		if ( 'yes' === strtolower( $atts['fluid'] ) ) {
-			$atts['class'] .= ' expanded';
-		}
-
-		$html = sprintf( '<div%sclass="row%s"%s>%s</div>',
+		$html = sprintf( '<p%sclass="lead%s"%s>%s</p>',
 			$atts['id'],
 			$atts['class'],
 			$atts['style'],
@@ -51,4 +46,4 @@ Class FN6S_Row {
 
 }
 
-new FN6S_Row();
+new FN6S_Lead();
