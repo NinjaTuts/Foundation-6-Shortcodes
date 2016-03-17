@@ -4,7 +4,7 @@ Class FN6S_Button {
 
 	public function __construct() {
 
-		add_shortcode( 'fn_button', array( $this, 'render' ) );
+		add_shortcode( 'fn_btn', array( $this, 'render' ) );
 
 	}
 
@@ -14,7 +14,14 @@ Class FN6S_Button {
 			'id'										=> null,
 			'class'									=> null,
 			'style'									=> null,
-		), $atts, 'fn_button' );
+			'link'									=> null,
+			'target'								=> null,
+			'type'									=> null,
+			'size'									=> null,
+			'expanded'							=> null,
+			'disabled'							=> null,
+			'hollow'								=> null,
+		), $atts, 'fn_btn' );
 
 		// Remove whitespaces from starting and ending of shortcode attribtues
 		$atts = array_map( 'trim', $atts );
@@ -25,18 +32,49 @@ Class FN6S_Button {
 			$atts['id'] = ' ';
 		}
 
-		if ( ! empty( $atts['class'] ) ) {
-			$atts['class'] = ' ' . $atts['class'];
-		}
-
 		if ( ! empty( $atts['style'] ) ) {
 			$atts['style'] = ' style="' . $atts['style'] . '"';
 		}
 
+		if ( empty( $atts['link'] ) ) {
+			$atts['link'] = 'javascript: void(0);';
+		}
 
-		$html = sprintf( '<div%sclass="row%s"%s>%s</div>',
+		if ( ! empty( $atts['target'] ) ) {
+			$atts['target'] = ' target="' . $atts['target'] . '"';
+		}
+
+		if ( ! empty( $atts['type'] ) ) {
+			$class .= ' ' . strtolower( $atts['type'] );
+		}
+
+		if ( ! empty( $atts['size'] ) ) {
+			$class .= ' ' . strtolower( $atts['size'] );
+		}
+
+		if ( 'yes' === strtolower( $atts['expanded'] ) ) {
+			$class .= ' expanded';
+		}
+
+		if ( 'yes' === strtolower( $atts['disabled'] ) ) {
+			$class .= ' disabled';
+		}
+
+		if ( 'yes' === strtolower( $atts['hollow'] ) ) {
+			$class .= ' hollow';
+		}
+
+		if ( ! empty( $atts['class'] ) ) {
+			$atts['class'] = $class . ' button ' . $atts['class'];
+		} else {
+			$atts['class'] = $class ? $class . ' button' : 'button';
+		}
+
+		$html = sprintf( '<a href="%s"%s%sclass="%s"%s>%s</a>',
+			$atts['link'],
+			$atts['target'],
 			$atts['id'],
-			$atts['class'],
+			trim( $atts['class'] ),
 			$atts['style'],
 			do_shortcode( $content ) 
 		);
@@ -47,4 +85,4 @@ Class FN6S_Button {
 
 }
 
-// new FN6S_Button();
+new FN6S_Button();
