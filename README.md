@@ -76,3 +76,21 @@ The plugin is tested with `Foundation 6` and `WordPress 4.4`
 | id      				| An ID you wish to add 															|   no 	   	|  any id							|  null   	|
 | class         	| Any classes you wish to add      										|   no     	|  any class/classes	|  null   	|
 | style						| Any inline styles you wish to add      							|   no     	|  any css properties |  null   	|
+
+
+#### [fn_btn] parameters
+    [fn_btn]
+      ...
+    [/fn_btn]
+| Attribute       | Description                                         | Required  | Values              | Default   |
+| :-------------: | :-------------------------------------------------: | :-------: | :-----------------: | :-------: |
+| id              | An ID you wish to add                               |   no      |  any id             |  null     |
+| class           | Any classes you wish to add                         |   no      |  any class/classes  |  null     |
+| style           | Any inline styles you wish to add                   |   no      |  any css properties |  null     |
+| link            | Any link the button should point to                 |   no      |  the hyperlink      |  javascript: void(0);     |
+| target          | Anchor target values                                |   no      |  any css properties |  null     |
+| type            | Any inline styles you wish to add                   |   no      |  any css properties |  null     |
+| size            | Any inline styles you wish to add                   |   no      |  any css properties |  null     |
+| expanded        | Any inline styles you wish to add                   |   no      |  any css properties |  null     |
+| disabled        | Any inline styles you wish to add                   |   no      |  any css properties |  null     |
+| hollow          | Any inline styles you wish to add                   |   no      |  any css properties |  null     |
