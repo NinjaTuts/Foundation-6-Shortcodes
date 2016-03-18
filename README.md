@@ -91,6 +91,6 @@ The plugin is tested with `Foundation 6` and `WordPress 4.4`
 | target          | Anchor target values                                |   no      |  any css properties |  null     |
 | type            | Any inline styles you wish to add                   |   no      |  any css properties |  null     |
 | size            | Any inline styles you wish to add                   |   no      |  any css properties |  null     |
-| expanded        | Any inline styles you wish to add                   |   no      |  any css properties |  null     |
-| disabled        | Any inline styles you wish to add                   |   no      |  any css properties |  null     |
-| hollow          | Any inline styles you wish to add                   |   no      |  any css properties |  null     |
+| expanded        | Any inline styles you wish to add                   |   no      |  yes                |  null     |
+| disabled        | Any inline styles you wish to add                   |   no      |  yes                |  null     |
+| hollow          | Any inline styles you wish to add                   |   no      |  yes                |  null     |

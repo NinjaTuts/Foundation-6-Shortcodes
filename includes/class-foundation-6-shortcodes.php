@@ -239,6 +239,7 @@ class Foundation_6_Shortcodes {
 		// array of custom shortcodes requiring the fix 
 		$block = join( '|', array(
 			'fn_btn',
+			'fn_btn_group',
 			'fn_col',
 			'fn_lead',
 			'fn_row',
