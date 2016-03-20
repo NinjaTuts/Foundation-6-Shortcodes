@@ -11,7 +11,7 @@ class F6_Row extends WP_UnitTestCase {
 		$this->assertEquals( shortcode_exists( 'fn_row' ), true );
 
 	}
-	
+
 	/**
 	 * Test whether [fn_row] shortcode is executed or not
 	 * @return void
@@ -35,22 +35,22 @@ class F6_Row extends WP_UnitTestCase {
 	public function test_shortcodes_fn_row_empty_attributes() {
 
 		$id = '';
-		$content = '[fn_row id="' . $id . '"]';
+		$content = sprintf( '[fn_row id="%s"]', $id );
 		$shortcode_content = do_shortcode( $content );
 		$this->assertNotContains( 'id=', $shortcode_content );
 
 		$class = '';
-		$content = '[fn_row class="' . $class . '"]';
+		$content = sprintf( '[fn_row class="%s"]', $class );
 		$shortcode_content = do_shortcode( $content );
 		$this->assertEquals( '<div class="row"></div>', $shortcode_content );
 
 		$style = '';
-		$content = '[fn_row style="' . $style . '"]';
+		$content = sprintf( '[fn_row style="%s"]', $style );
 		$shortcode_content = do_shortcode( $content );
 		$this->assertEquals( '<div class="row"></div>', $shortcode_content );
 
 		$fluid = '';
-		$content = '[fn_row fluid="' . $fluid . '"]';
+		$content = sprintf( '[fn_row fluid="%s"]', $fluid );
 		$shortcode_content = do_shortcode( $content );
 		$this->assertEquals( '<div class="row"></div>', $shortcode_content );
 
@@ -64,8 +64,7 @@ class F6_Row extends WP_UnitTestCase {
 	public function test_shortcodes_fn_row_id() {
 
 		$id = 'js-some-id';
-
-		$content = '[fn_row id="' . $id . '"]';
+		$content = sprintf( '[fn_row id="%s"]', $id );
 		$shortcode_content = do_shortcode( $content );
 		$this->assertEquals( sprintf( '<div id="%s" class="row"></div>', $id ), $shortcode_content );
 
@@ -79,23 +78,9 @@ class F6_Row extends WP_UnitTestCase {
 	public function test_shortcodes_fn_row_class() {
 
 		$class = 'some-class some-other-class';
-		$content = '[fn_row class="' . $class . '"]';
+		$content = sprintf( '[fn_row class="%s"]', $class );
 		$shortcode_content = do_shortcode( $content );
 		$this->assertEquals( sprintf( '<div class="row %s"></div>', $class ), $shortcode_content );
-
-	}
-
-	/**
-	 * Test [fn_row] shortcode with fluid attribute
-	 * - fluid:	[fn_row fluid="yes"]
-	 * @return void
-	 */
-	public function test_shortcodes_fn_row_fluid() {
-
-		$fluid = 'yes';
-		$content = '[fn_row fluid="' . $fluid . '"]';
-		$shortcode_content = do_shortcode( $content );
-		$this->assertEquals( '<div class="row expanded"></div>', $shortcode_content );
 
 	}
 
@@ -107,9 +92,23 @@ class F6_Row extends WP_UnitTestCase {
 	public function test_shortcodes_fn_row_style() {
 
 		$style = 'margin: 0; padding: 100px;';
-		$content = '[fn_row style="' . $style . '"]';
+		$content = sprintf( '[fn_row style="%s"]', $style );
 		$shortcode_content = do_shortcode( $content );
 		$this->assertEquals( sprintf( '<div class="row" style="%s"></div>', $style ), $shortcode_content );
+
+	}
+
+	/**
+	 * Test [fn_row] shortcode with fluid attribute
+	 * - fluid:	[fn_row fluid="yes"]
+	 * @return void
+	 */
+	public function test_shortcodes_fn_row_fluid() {
+
+		$fluid = 'yes';
+		$content = sprintf( '[fn_row fluid="%s"]', $fluid );
+		$shortcode_content = do_shortcode( $content );
+		$this->assertEquals( '<div class="row expanded"></div>', $shortcode_content );
 
 	}
 
@@ -123,8 +122,7 @@ class F6_Row extends WP_UnitTestCase {
 
 		$id = 'js-some-id';
 		$class = 'some-class';
-
-		$content = '[fn_row id="' . $id . '" class="' . $class . '"]';
+		$content = sprintf( '[fn_row id="%s" class="%s"]', $id, $class );
 		$shortcode_content = do_shortcode( $content );
 		$this->assertEquals( sprintf( '<div id="%s" class="row some-class"></div>', $id ), $shortcode_content );
 
