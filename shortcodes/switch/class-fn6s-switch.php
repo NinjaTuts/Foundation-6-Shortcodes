@@ -1,6 +1,6 @@
 <?php
 
-Class FN6S_Switch {
+Class FN_Switch {
 
 	public function __construct() {
 
@@ -74,4 +74,4 @@ Class FN6S_Switch {
 
 }
 
-// new FN6S_Switch();
+// new FN_Switch();

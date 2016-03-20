@@ -1,10 +1,10 @@
 <?php
 
-Class FN6S_Lead {
+Class FN_Row {
 
 	public function __construct() {
 
-		add_shortcode( 'fn_lead', array( $this, 'render' ) );
+		add_shortcode( 'fn_row', array( $this, 'render' ) );
 
 	}
 
@@ -14,10 +14,12 @@ Class FN6S_Lead {
 			'id'										=> null,
 			'class'									=> null,
 			'style'									=> null,
-		), $atts, 'fn_lead' );
+			'fluid' 								=> null,
+		), $atts, 'fn_row' );
 
 		// Remove whitespaces from starting and ending of shortcode attribtues
 		$atts = array_map( 'trim', $atts );
+		$class = ' row ';
 
 		if ( ! empty( $atts['id'] ) ) {
 			$atts['id'] = ' id="' . $atts['id'] . '" ';
@@ -25,15 +27,24 @@ Class FN6S_Lead {
 			$atts['id'] = ' ';
 		}
 
-		if ( ! empty( $atts['class'] ) ) {
-			$atts['class'] = ' ' . $atts['class'];
-		}
-
 		if ( ! empty( $atts['style'] ) ) {
 			$atts['style'] = ' style="' . $atts['style'] . '"';
 		}
 
-		$html = sprintf( '<p%sclass="lead%s"%s>%s</p>',
+		if ( 'yes' === strtolower( $atts['fluid'] ) ) {
+			$class .= ' expanded ';
+		}
+
+		if ( ! empty( $atts['class'] ) ) {
+			$atts['class'] = $class . ' ' . $atts['class'];
+		} else {
+			$atts['class'] = $class;
+		}
+
+		$atts = preg_replace('/\s+/', ' ', $atts);
+		$atts['class'] = trim( $atts['class'] );
+
+		$html = sprintf( '<div%sclass="%s"%s>%s</div>',
 			$atts['id'],
 			$atts['class'],
 			$atts['style'],
@@ -46,4 +57,4 @@ Class FN6S_Lead {
 
 }
 
-new FN6S_Lead();
+new FN_Row();

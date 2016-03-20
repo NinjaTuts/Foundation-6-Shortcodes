@@ -26,16 +26,16 @@ if ( ! defined( 'WPINC' ) ) {
 }
 
 define( 'FOUNDATION__VERSION', '6.2.0' );
-define( 'FN6S__VERSION', '1.0.0' );
-define( 'FN6S__PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
-define( 'FN6S__PLUGIN_DIR_URL', plugin_dir_url( __FILE__ ) );
+define( 'FN__VERSION', '1.0.0' );
+define( 'FN__PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
+define( 'FN__PLUGIN_DIR_URL', plugin_dir_url( __FILE__ ) );
 
 /**
  * The code that runs during plugin activation.
  * This action is documented in includes/class-foundation-6-shortcodes-activator.php
  */
 function activate_foundation_6_shortcodes() {
-	require_once FN6S__PLUGIN_DIR . 'includes/class-foundation-6-shortcodes-activator.php';
+	require_once FN__PLUGIN_DIR . 'includes/class-foundation-6-shortcodes-activator.php';
 	Foundation_6_Shortcodes_Activator::activate();
 }
 
@@ -44,7 +44,7 @@ function activate_foundation_6_shortcodes() {
  * This action is documented in includes/class-foundation-6-shortcodes-deactivator.php
  */
 function deactivate_foundation_6_shortcodes() {
-	require_once FN6S__PLUGIN_DIR . 'includes/class-foundation-6-shortcodes-deactivator.php';
+	require_once FN__PLUGIN_DIR . 'includes/class-foundation-6-shortcodes-deactivator.php';
 	Foundation_6_Shortcodes_Deactivator::deactivate();
 }
 
@@ -55,7 +55,7 @@ register_deactivation_hook( __FILE__, 'deactivate_foundation_6_shortcodes' );
  * The core plugin class that is used to define internationalization,
  * admin-specific hooks, and public-facing site hooks.
  */
-require FN6S__PLUGIN_DIR . 'includes/class-foundation-6-shortcodes.php';
+require FN__PLUGIN_DIR . 'includes/class-foundation-6-shortcodes.php';
 
 /**
  * Begins execution of the plugin.

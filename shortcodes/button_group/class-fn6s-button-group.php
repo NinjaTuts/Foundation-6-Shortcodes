@@ -1,6 +1,6 @@
 <?php
 
-Class FN6S_Button_Group {
+Class FN_Button_Group {
 
 	public function __construct() {
 
@@ -67,4 +67,4 @@ Class FN6S_Button_Group {
 
 }
 
-new FN6S_Button_Group();
+new FN_Button_Group();

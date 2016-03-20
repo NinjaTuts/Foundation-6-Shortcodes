@@ -73,7 +73,7 @@ class Foundation_6_Shortcodes_Admin {
 		 * class.
 		 */
 
-		wp_enqueue_style( $this->plugin_name, FN6S__PLUGIN_DIR_URL . 'css/foundation-6-shortcodes-admin.css', array(), $this->version, 'all' );
+		wp_enqueue_style( $this->plugin_name, FN__PLUGIN_DIR_URL . 'css/foundation-6-shortcodes-admin.css', array(), $this->version, 'all' );
 
 	}
 
@@ -96,7 +96,7 @@ class Foundation_6_Shortcodes_Admin {
 		 * class.
 		 */
 
-		wp_enqueue_script( $this->plugin_name, FN6S__PLUGIN_DIR_URL . 'js/foundation-6-shortcodes-admin.js', array( 'jquery' ), $this->version, false );
+		wp_enqueue_script( $this->plugin_name, FN__PLUGIN_DIR_URL . 'js/foundation-6-shortcodes-admin.js', array( 'jquery' ), $this->version, false );
 
 	}
 

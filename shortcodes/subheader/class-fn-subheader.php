@@ -1,10 +1,10 @@
 <?php
 
-Class FN6S_Row {
+Class FN_Subheader {
 
 	public function __construct() {
 
-		add_shortcode( 'fn_row', array( $this, 'render' ) );
+		add_shortcode( 'fn_subheader', array( $this, 'render' ) );
 
 	}
 
@@ -14,8 +14,8 @@ Class FN6S_Row {
 			'id'										=> null,
 			'class'									=> null,
 			'style'									=> null,
-			'fluid' 								=> null,
-		), $atts, 'fn_row' );
+			'type'									=> null
+		), $atts, 'fn_subheader' );
 
 		// Remove whitespaces from starting and ending of shortcode attribtues
 		$atts = array_map( 'trim', $atts );
@@ -34,15 +34,19 @@ Class FN6S_Row {
 			$atts['style'] = ' style="' . $atts['style'] . '"';
 		}
 
-		if ( 'yes' === strtolower( $atts['fluid'] ) ) {
-			$atts['class'] .= ' expanded';
+		if ( ! empty( $atts['type'] ) &&  $atts['type'] >= 1 && $atts['type'] <= 6 ) {
+			$atts['type'] = 'h' . $atts['type'];
+		} else {
+			$atts['type'] = 'h1';
 		}
-
-		$html = sprintf( '<div%sclass="row%s"%s>%s</div>',
+		
+		$html = sprintf( '<%s%sclass="subheader%s"%s>%s</%s>',
+			$atts['type'],
 			$atts['id'],
 			$atts['class'],
 			$atts['style'],
-			do_shortcode( $content ) 
+			do_shortcode( $content ),
+			$atts['type']
 		);
 
 		return $html;
@@ -51,4 +55,4 @@ Class FN6S_Row {
 
 }
 
-new FN6S_Row();
+new FN_Subheader();

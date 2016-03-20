@@ -1,10 +1,10 @@
 <?php
 
-Class FN6S_Subheader {
+Class FN_Lead {
 
 	public function __construct() {
 
-		add_shortcode( 'fn_subheader', array( $this, 'render' ) );
+		add_shortcode( 'fn_lead', array( $this, 'render' ) );
 
 	}
 
@@ -14,8 +14,7 @@ Class FN6S_Subheader {
 			'id'										=> null,
 			'class'									=> null,
 			'style'									=> null,
-			'type'									=> null
-		), $atts, 'fn_subheader' );
+		), $atts, 'fn_lead' );
 
 		// Remove whitespaces from starting and ending of shortcode attribtues
 		$atts = array_map( 'trim', $atts );
@@ -34,19 +33,11 @@ Class FN6S_Subheader {
 			$atts['style'] = ' style="' . $atts['style'] . '"';
 		}
 
-		if ( ! empty( $atts['type'] ) &&  $atts['type'] >= 1 && $atts['type'] <= 6 ) {
-			$atts['type'] = 'h' . $atts['type'];
-		} else {
-			$atts['type'] = 'h1';
-		}
-		
-		$html = sprintf( '<%s%sclass="subheader%s"%s>%s</%s>',
-			$atts['type'],
+		$html = sprintf( '<p%sclass="lead%s"%s>%s</p>',
 			$atts['id'],
 			$atts['class'],
 			$atts['style'],
-			do_shortcode( $content ),
-			$atts['type']
+			do_shortcode( $content ) 
 		);
 
 		return $html;
@@ -55,4 +46,4 @@ Class FN6S_Subheader {
 
 }
 
-new FN6S_Subheader();
+new FN_Lead();

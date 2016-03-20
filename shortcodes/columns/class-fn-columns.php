@@ -1,6 +1,6 @@
 <?php
 
-Class FN6S_Columns {
+Class FN_Columns {
 
 	public function __construct() {
 
@@ -88,4 +88,4 @@ Class FN6S_Columns {
 
 }
 
-new FN6S_Columns();
+new FN_Columns();
