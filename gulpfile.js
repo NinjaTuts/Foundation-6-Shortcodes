@@ -165,9 +165,9 @@ function phpLint(file) {
 */
 gulp.task('clean', function() {
 	return p.del(['./public/css/*.css',
-		'!./public/css/lo-core-public.css',
+		'!./public/css/foundation-6-shortcodes-public.css',
 		'./public/js/*.js',
-		'!./public/js/lo-core-public.js',
+		'!./public/js/foundation-6-shortcodes-public.js',
 		'**/.sass-cache',
 		'**/.DS_Store'
 	]);
@@ -200,7 +200,7 @@ gulp.task('browser-sync', function() {
 gulp.task('watch', ['browser-sync'], function() {
   gulp.watch(['./admin/scss/**/*.scss', './public/scss/**/*.scss'], ['scss']);
 
-  gulp.watch(['./admin/js/lo-core-admin.js', './public/js/lo-core-public.js']).on('change', function(e) {
+  gulp.watch(['./admin/js/foundation-6-shortcodes-admin.js', './public/js/foundation-6-shortcodes-public.js']).on('change', function(e) {
   	jsLint(e.path);
   });
 

@@ -1,6 +1,6 @@
 {
-  "name": "lo-core",
-  "description": "A Core Plugin For LO Theme",
+  "name": "foundation-6-shortcodes",
+  "description": "A WordPress plugin for Foundation 6 Shortcodes",
   "main": "gulpfile.js",
   "authors": [
     "Abhishek Jain"
