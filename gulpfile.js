@@ -1,5 +1,5 @@
 // Project configuration
-var project 		= 'lo', // Project name, used for build zip.
+var project 		= 'foundation-6-shortcodes', // Project name, used for build zip.
 	url 					= 'http://localhost/wp', // Local Development URL for BrowserSync. Change as-needed.
 	bower 				= './bower_components/'; // Not truly using this yet, more or less playing right now. TO-DO Place in Dev branch
 	build 				= './buildplugin/', // Files that you want to package into a zip go here
@@ -59,7 +59,7 @@ gulp.task('copyBower', function() {
  *
 */
 gulp.task('scss', function () {
-	return gulp.src('./assets/scss/**/*.scss')
+	return gulp.src(['./admin/scss/**/*.scss', './public/scss/**/*.scss'])
 		.pipe(p.plumber())
 		.pipe(p.sourcemaps.init())
 		.pipe(p.sass({

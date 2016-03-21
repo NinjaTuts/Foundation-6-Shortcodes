@@ -30,7 +30,7 @@ Class FN_Button_Group {
 		}
 
 		if ( ! empty( $atts['style'] ) ) {
-			$atts['style'] = ' style="' . $atts['style'] . '" ';
+			$atts['style'] = ' style="' . $atts['style'] . '"';
 		}
 
 		if ( ! empty( $atts['size'] ) ) {
