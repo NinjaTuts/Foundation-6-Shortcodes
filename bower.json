@@ -17,7 +17,7 @@
     "tests"
   ],
   "devDependencies": {
-    "foundation-sites": "^*",
+    "foundation-sites": "*",
     "motion-ui": "*"
   }
 }
