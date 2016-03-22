@@ -1,6 +1,6 @@
 <?php
 
-class F6_Badge extends WP_UnitTestCase {
+class FN_Badge_Test extends WP_UnitTestCase {
 
 	/**
 	 * Test whether [fn_badge] shortcode exists or not
@@ -112,7 +112,7 @@ class F6_Badge extends WP_UnitTestCase {
 
 	}
 
-		/**
+	/**
 	 * Test [fn_badge] shortcode with content
 	 * [fn_badge]A[/fn_bagde]
 	 * @return void

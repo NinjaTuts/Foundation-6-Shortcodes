@@ -1,6 +1,6 @@
 <?php
 
-class F6_Button_Group extends WP_UnitTestCase {
+class FN_Button_Group_Test extends WP_UnitTestCase {
 
 	/**
 	 * Test whether [fn_btn_group] shortcode exists or not

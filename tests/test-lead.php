@@ -1,6 +1,6 @@
 <?php
 
-class F6_Lead extends WP_UnitTestCase {
+class FN_Lead_Test extends WP_UnitTestCase {
 
 	/**
 	 * Test whether [fn_lead] shortcode exists or not

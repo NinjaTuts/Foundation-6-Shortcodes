@@ -1,6 +1,6 @@
 <?php
 
-class F6_Subheader extends WP_UnitTestCase {
+class FN_Subheader_Test extends WP_UnitTestCase {
 
 	/**
 	 * Test whether [fn_subheader] shortcode exists or not

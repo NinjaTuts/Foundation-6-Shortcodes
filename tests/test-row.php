@@ -1,6 +1,6 @@
 <?php
 
-class F6_Row extends WP_UnitTestCase {
+class FN_Row_Test extends WP_UnitTestCase {
 
 	/**
 	 * Test whether [fn_row] shortcode exists or not
