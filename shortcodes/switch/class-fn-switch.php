@@ -58,7 +58,7 @@ Class FN_Switch {
 			$atts['class'] = $class ? $class . ' switch ' : ' switch ';
 		}
 
-		$atts = preg_replace('/\s+/', ' ', $atts);
+		$atts = preg_replace( '/\s+/', ' ', $atts );
 		$atts['class'] = trim( $atts['class'] );
 
 		$html = sprintf( '<div%sclass="%s"%s>%s</div>',

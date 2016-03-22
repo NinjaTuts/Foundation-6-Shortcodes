@@ -25,6 +25,8 @@ Class FN_Button {
 
 		// Remove whitespaces from starting and ending of shortcode attribtues
 		$atts = array_map( 'trim', $atts );
+		$default_class = ' button ';
+		$class = '';
 
 		if ( ! empty( $atts['id'] ) ) {
 			$atts['id'] = ' id="' . $atts['id'] . '" ';
@@ -45,36 +47,39 @@ Class FN_Button {
 		}
 
 		if ( ! empty( $atts['type'] ) ) {
-			$class .= ' ' . strtolower( $atts['type'] );
+			$class .= ' ' . strtolower( $atts['type'] ) . ' ';
 		}
 
 		if ( ! empty( $atts['size'] ) ) {
-			$class .= ' ' . strtolower( $atts['size'] );
+			$class .= ' ' . strtolower( $atts['size'] ) . ' ';
 		}
 
 		if ( 'yes' === strtolower( $atts['expanded'] ) ) {
-			$class .= ' expanded';
+			$class .= ' expanded ';
 		}
 
 		if ( 'yes' === strtolower( $atts['disabled'] ) ) {
-			$class .= ' disabled';
+			$class .= ' disabled ';
 		}
 
 		if ( 'yes' === strtolower( $atts['hollow'] ) ) {
-			$class .= ' hollow';
+			$class .= ' hollow ';
 		}
 
 		if ( ! empty( $atts['class'] ) ) {
-			$atts['class'] = $class . ' button ' . $atts['class'];
+			$atts['class'] = $class . $atts['class'] . $default_class;
 		} else {
-			$atts['class'] = $class ? $class . ' button' : 'button';
+			$atts['class'] = ( $class ) ? $class . $default_class  : $default_class ;
 		}
+
+		$atts = preg_replace( '/\s+/', ' ', $atts );
+		$atts['class'] = trim( $atts['class'] );
 
 		$html = sprintf( '<a href="%s"%s%sclass="%s"%s>%s</a>',
 			$atts['link'],
 			$atts['target'],
 			$atts['id'],
-			trim( $atts['class'] ),
+			$atts['class'],
 			$atts['style'],
 			do_shortcode( $content ) 
 		);

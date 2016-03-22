@@ -51,7 +51,7 @@ Class FN_Button_Group {
 			$atts['class'] = $class ? $class . ' button-group ' : ' button-group ';
 		}
 
-		$atts = preg_replace('/\s+/', ' ', $atts);
+		$atts = preg_replace( '/\s+/', ' ', $atts );
 		$atts['class'] = trim( $atts['class'] );
 
 		$html = sprintf( '<div%sclass="%s"%s>%s</div>',

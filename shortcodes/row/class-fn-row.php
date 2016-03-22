@@ -41,7 +41,7 @@ Class FN_Row {
 			$atts['class'] = $class;
 		}
 
-		$atts = preg_replace('/\s+/', ' ', $atts);
+		$atts = preg_replace( '/\s+/', ' ', $atts );
 		$atts['class'] = trim( $atts['class'] );
 
 		$html = sprintf( '<div%sclass="%s"%s>%s</div>',
