@@ -112,7 +112,7 @@ class F6_Button_Group extends WP_UnitTestCase {
 
 	/**
 	 * Test [fn_btn_group] shortcode with size attribute
-	 * - size:	[fn_btn_group size=""]
+	 * - size:	[fn_btn_group size="tiny"]
 	 * @return void
 	 */
 	public function test_shortcodes_fn_btn_group_size() {
@@ -126,7 +126,7 @@ class F6_Button_Group extends WP_UnitTestCase {
 
 	/**
 	 * Test [fn_btn_group] shortcode with type attribute
-	 * - type:	[fn_btn_group type=""]
+	 * - type:	[fn_btn_group type="secondary"]
 	 * @return void
 	 */
 	public function test_shortcodes_fn_btn_group_type() {
@@ -140,7 +140,7 @@ class F6_Button_Group extends WP_UnitTestCase {
 
 	/**
 	 * Test [fn_btn_group] shortcode with expanded attribute
-	 * - expanded:	[fn_btn_group expanded=""]
+	 * - expanded:	[fn_btn_group expanded="yes"]
 	 * @return void
 	 */
 	public function test_shortcodes_fn_btn_group_expanded() {

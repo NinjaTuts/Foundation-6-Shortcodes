@@ -1,10 +1,10 @@
 <?php
 
-Class FN_Switch {
+Class FN_Badge {
 
 	public function __construct() {
 
-		add_shortcode( 'fn_switch', array( $this, 'render' ) );
+		add_shortcode( 'fn_badge', array( $this, 'render' ) );
 
 	}
 
@@ -14,16 +14,12 @@ Class FN_Switch {
 			'id'										=> null,
 			'class'									=> null,
 			'style'									=> null,
-			'type'									=> null,
-			'size'									=> null,
-			'label'									=> null,
-			'on_label'							=> null,
-			'off_label'							=> null,
-			'sr_label'							=> null,
-		), $atts, 'fn_switch' );
+			'type' 								=> null,
+		), $atts, 'fn_badge' );
 
 		// Remove whitespaces from starting and ending of shortcode attribtues
 		$atts = array_map( 'trim', $atts );
+		$default_class = ' badge ';
 		$class = '';
 
 		if ( ! empty( $atts['id'] ) ) {
@@ -40,28 +36,16 @@ Class FN_Switch {
 			$class .= ' ' . strtolower( $atts['type'] ) . ' ';
 		}
 
-		if ( ! empty( $atts['size'] ) ) {
-			$class .= ' ' . strtolower( $atts['size'] ) . ' ';
-		}
-
-		if ( ! empty( $atts['type'] ) ) {
-			$class .= ' ' . strtolower( $atts['type'] ) . ' ';
-		}
-
-		if ( 'yes' === strtolower( $atts['expanded'] ) ) {
-			$class .= ' expanded ';
-		}
-
 		if ( ! empty( $atts['class'] ) ) {
-			$atts['class'] = $class . 'switch ' . $atts['class'] . ' ';
+			$atts['class'] = $class . $default_class . $atts['class'];
 		} else {
-			$atts['class'] = $class ? $class . ' switch ' : ' switch ';
+			$atts['class'] = $class . $default_class;
 		}
 
 		$atts = preg_replace( '/\s+/', ' ', $atts );
 		$atts['class'] = trim( $atts['class'] );
 
-		$html = sprintf( '<div%sclass="%s"%s>%s</div>',
+		$html = sprintf( '<span%sclass="%s"%s>%s</span>',
 			$atts['id'],
 			$atts['class'],
 			$atts['style'],
@@ -74,4 +58,4 @@ Class FN_Switch {
 
 }
 
-// new FN_Switch();
+new FN_Badge();

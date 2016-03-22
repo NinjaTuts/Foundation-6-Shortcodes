@@ -136,7 +136,7 @@ class F6_Button extends WP_UnitTestCase {
 
 	/**
 	 * Test [fn_btn] shortcode with link attribute
-	 * - link:	[fn_btn link=""]
+	 * - link:	[fn_btn link="//www.google.com"]
 	 * @return void
 	 */
 	public function test_shortcodes_fn_btn_link() {
@@ -150,7 +150,7 @@ class F6_Button extends WP_UnitTestCase {
 
 	/**
 	 * Test [fn_btn] shortcode with target attribute
-	 * - target:	[fn_btn target=""]
+	 * - target:	[fn_btn target="_blank"]
 	 * @return void
 	 */
 	public function test_shortcodes_fn_btn_target() {
@@ -164,7 +164,7 @@ class F6_Button extends WP_UnitTestCase {
 
 	/**
 	 * Test [fn_btn] shortcode with size attribute
-	 * - size:	[fn_btn size=""]
+	 * - size:	[fn_btn size="tiny"]
 	 * @return void
 	 */
 	public function test_shortcodes_fn_btn_size() {
@@ -178,7 +178,7 @@ class F6_Button extends WP_UnitTestCase {
 
 	/**
 	 * Test [fn_btn] shortcode with expanded attribute
-	 * - expanded:	[fn_btn expanded=""]
+	 * - expanded:	[fn_btn expanded="yes"]
 	 * @return void
 	 */
 	public function test_shortcodes_fn_btn_expanded() {
@@ -192,7 +192,7 @@ class F6_Button extends WP_UnitTestCase {
 
 	/**
 	 * Test [fn_btn] shortcode with type attribute
-	 * - type:	[fn_btn type=""]
+	 * - type:	[fn_btn type="warning"]
 	 * @return void
 	 */
 	public function test_shortcodes_fn_btn_type() {
@@ -206,7 +206,7 @@ class F6_Button extends WP_UnitTestCase {
 
 	/**
 	 * Test [fn_btn] shortcode with hollow attribute
-	 * - hollow:	[fn_btn hollow=""]
+	 * - hollow:	[fn_btn hollow="yes"]
 	 * @return void
 	 */
 	public function test_shortcodes_fn_btn_hollow() {
