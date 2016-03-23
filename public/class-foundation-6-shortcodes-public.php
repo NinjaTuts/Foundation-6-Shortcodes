@@ -77,6 +77,7 @@ class Foundation_6_Shortcodes_Public {
 
 
 		wp_enqueue_style( 'foundation-6', FN__PLUGIN_DIR_URL . 'public/css/foundation.min.css', array(), FOUNDATION__VERSION );
+		wp_enqueue_style( 'motion-ui', FN__PLUGIN_DIR_URL . 'public/css/motion-ui.min.css', array( 'foundation-6' ), MOTION_UI__VERSION );
 
 	}
 
@@ -102,6 +103,7 @@ class Foundation_6_Shortcodes_Public {
 		// wp_enqueue_script( $this->plugin_name, FN__PLUGIN_DIR_URL . 'js/foundation-6-shortcodes-public.js', array( 'jquery' ), $this->version, false );
 
 		wp_enqueue_script( 'foundation-6', FN__PLUGIN_DIR_URL . 'public/js/foundation.min.js', array( 'jquery' ), FOUNDATION__VERSION, true );
+		wp_enqueue_script( 'motion-ui', FN__PLUGIN_DIR_URL . 'public/js/motion-ui.min.js', array( 'foundation-6' ), MOTION_UI__VERSION, true );
 
 	}
 

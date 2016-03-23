@@ -26,6 +26,7 @@ if ( ! defined( 'WPINC' ) ) {
 }
 
 define( 'FOUNDATION__VERSION', '6.2.0' );
+define( 'MOTION_UI__VERSION', '1.2.1' );
 define( 'FN__VERSION', '1.0.0' );
 define( 'FN__PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
 define( 'FN__PLUGIN_DIR_URL', plugin_dir_url( __FILE__ ) );

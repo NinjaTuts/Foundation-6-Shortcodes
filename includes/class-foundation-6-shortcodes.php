@@ -248,17 +248,18 @@ class Foundation_6_Shortcodes {
 		// array of custom shortcodes requiring the fix 
 		$block = join( '|', array(
 			'fn_accordion',
-			'fn_toggle',
 			'fn_badge',
 			'fn_btn',
 			'fn_btn_group',
+			'fn_callout',
 			'fn_col',
 			'fn_flex_video',
 			'fn_label',
 			'fn_lead',
 			'fn_row',
 			'fn_subheader',
-			'fn_switch'
+			'fn_switch',
+			'fn_toggle',
 		) );
 
 		// opening p tag and br tag
