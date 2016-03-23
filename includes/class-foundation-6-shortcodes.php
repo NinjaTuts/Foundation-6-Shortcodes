@@ -193,6 +193,7 @@ class Foundation_6_Shortcodes {
 	public function run() {
 
 		$this->loader->run();
+		add_action( 'wp_footer', array( $this, 'intialize_foundation_js' ), 100 );
 		add_filter( 'the_content', array( $this, 'shortcodes_cleanup' ) );
 
 	}
@@ -229,6 +230,14 @@ class Foundation_6_Shortcodes {
 	}
 
 	/**
+	 * Initialize Foundation JavaScript
+	 */
+	public function intialize_foundation_js() {
+		echo '<script>jQuery(document).foundation();</script>';
+	}
+
+
+	/**
 	 * Remove extra <p> </p> and <br /> tags from the shortcodes added by TinyMCE
 	 *
 	 * @since     1.0.0
@@ -238,12 +247,18 @@ class Foundation_6_Shortcodes {
 
 		// array of custom shortcodes requiring the fix 
 		$block = join( '|', array(
+			'fn_accordion',
+			'fn_toggle',
+			'fn_badge',
 			'fn_btn',
 			'fn_btn_group',
 			'fn_col',
+			'fn_flex_video',
+			'fn_label',
 			'fn_lead',
 			'fn_row',
-			'fn_subheader'
+			'fn_subheader',
+			'fn_switch'
 		) );
 
 		// opening p tag and br tag
