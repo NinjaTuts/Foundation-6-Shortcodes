@@ -62,7 +62,7 @@ Class FN_Slider {
 		$atts = preg_replace( '/\s+/', ' ', $atts );
 		$atts['class'] = trim( $atts['class'] );
 
-		$slider_handle = '<span class="slider-handle" data-slider-handle role="slider" tabindex="1"></span>';
+		$slider_handle = '<span class="slider-handle" data-slider-handle role="slider"></span>';
 		$slider_fill = '<span class="slider-fill" data-slider-fill></span>';
 		$slider_input = '<input type="hidden">';
 

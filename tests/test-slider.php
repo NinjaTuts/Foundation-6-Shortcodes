@@ -12,7 +12,7 @@ class FN_Slider_Test extends WP_UnitTestCase {
 	 */
 	public function __construct() {
 
-		$this->slider_inner_html = '<span class="slider-handle" data-slider-handle role="slider" tabindex="1"></span><span class="slider-fill" data-slider-fill></span><input type="hidden">';
+		$this->slider_inner_html = '<span class="slider-handle" data-slider-handle role="slider"></span><span class="slider-fill" data-slider-fill></span><input type="hidden">';
 
 	}
 
