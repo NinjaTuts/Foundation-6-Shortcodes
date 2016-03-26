@@ -258,7 +258,10 @@ class Foundation_6_Shortcodes {
 			'fn_lead',
 			'fn_row',
 			'fn_subheader',
+			'fn_slider',
 			'fn_switch',
+			'fn_tab',
+			'fn_tabs',
 			'fn_toggle',
 		) );
 
