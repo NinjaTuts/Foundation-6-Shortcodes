@@ -23,7 +23,7 @@ Class FN_Button {
 			'hollow'								=> null,
 		), $atts, 'fn_btn' );
 
-		// Remove whitespaces from starting and ending of shortcode attribtues
+		// Remove whitespaces from starting and ending of shortcode attributes
 		$atts = array_map( 'trim', $atts );
 		$default_class = ' button ';
 		$class = '';

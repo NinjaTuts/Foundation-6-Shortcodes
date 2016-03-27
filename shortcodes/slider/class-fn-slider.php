@@ -20,7 +20,7 @@ Class FN_Slider {
 			'end' 									=> null,
 		), $atts, 'fn_slider' );
 
-		// Remove whitespaces from starting and ending of shortcode attribtues
+		// Remove whitespaces from starting and ending of shortcode attributes
 		$atts = array_map( 'trim', $atts );
 		$default_class = ' slider ';
 		$data_vertical = '';

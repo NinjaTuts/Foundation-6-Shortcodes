@@ -19,7 +19,7 @@ Class FN_Tabs {
 		), $atts, 'fn_tabs' );
 
 
-		// Remove whitespaces from starting and ending of shortcode attribtues
+		// Remove whitespaces from starting and ending of shortcode attributes
 		$atts = array_map( 'trim', $atts );
 		$default_class = ' tabs ';
 		$class = '';
@@ -68,7 +68,7 @@ Class FN_Tabs {
 			'is_active' 						=> null,
 		), $atts, 'fn_tab' );
 
-		// Remove whitespaces from starting and ending of shortcode attribtues
+		// Remove whitespaces from starting and ending of shortcode attributes
 		$atts = array_map( 'trim', $atts );
 		$default_class = ' tabs-title ';
 		$class = '';

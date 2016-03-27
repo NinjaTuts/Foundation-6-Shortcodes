@@ -22,7 +22,7 @@ Class FN_Switch {
 			'sr_label'							=> null,
 		), $atts, 'fn_switch' );
 
-		// Remove whitespaces from starting and ending of shortcode attribtues
+		// Remove whitespaces from starting and ending of shortcode attributes
 		$atts = array_map( 'trim', $atts );
 		$class = '';
 

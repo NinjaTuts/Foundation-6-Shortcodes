@@ -20,7 +20,7 @@ Class FN_Accordion {
 		), $atts, 'fn_accordion' );
 
 
-		// Remove whitespaces from starting and ending of shortcode attribtues
+		// Remove whitespaces from starting and ending of shortcode attributes
 		$atts = array_map( 'trim', $atts );
 
 		if ( ! empty( $atts['id'] ) ) {
@@ -77,7 +77,7 @@ Class FN_Accordion {
 			'is_active' 						=> null,
 		), $atts, 'fn_toggle' );
 
-		// Remove whitespaces from starting and ending of shortcode attribtues
+		// Remove whitespaces from starting and ending of shortcode attributes
 		$atts = array_map( 'trim', $atts );
 		$default_class = ' accordion-item ';
 		$class = '';

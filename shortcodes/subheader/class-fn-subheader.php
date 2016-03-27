@@ -17,7 +17,7 @@ Class FN_Subheader {
 			'type'									=> null
 		), $atts, 'fn_subheader' );
 
-		// Remove whitespaces from starting and ending of shortcode attribtues
+		// Remove whitespaces from starting and ending of shortcode attributes
 		$atts = array_map( 'trim', $atts );
 
 		if ( ! empty( $atts['id'] ) ) {

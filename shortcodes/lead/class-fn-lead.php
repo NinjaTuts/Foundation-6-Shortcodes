@@ -16,7 +16,7 @@ Class FN_Lead {
 			'style'									=> null,
 		), $atts, 'fn_lead' );
 
-		// Remove whitespaces from starting and ending of shortcode attribtues
+		// Remove whitespaces from starting and ending of shortcode attributes
 		$atts = array_map( 'trim', $atts );
 
 		if ( ! empty( $atts['id'] ) ) {

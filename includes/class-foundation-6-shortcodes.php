@@ -256,13 +256,16 @@ class Foundation_6_Shortcodes {
 			'fn_flex_video',
 			'fn_label',
 			'fn_lead',
+			'fn_orbit',
 			'fn_row',
-			'fn_subheader',
+			'fn_slide',
 			'fn_slider',
+			'fn_subheader',
 			'fn_switch',
 			'fn_tab',
 			'fn_tabs',
 			'fn_toggle',
+			'fn_tooltip',
 		) );
 
 		// opening p tag and br tag

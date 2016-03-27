@@ -17,7 +17,7 @@ Class FN_Badge {
 			'type' 								=> null,
 		), $atts, 'fn_badge' );
 
-		// Remove whitespaces from starting and ending of shortcode attribtues
+		// Remove whitespaces from starting and ending of shortcode attributes
 		$atts = array_map( 'trim', $atts );
 		$default_class = ' badge ';
 		$class = '';

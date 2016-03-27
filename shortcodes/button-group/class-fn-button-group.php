@@ -19,7 +19,7 @@ Class FN_Button_Group {
 			'expanded'							=> null,
 		), $atts, 'fn_btn_group' );
 
-		// Remove whitespaces from starting and ending of shortcode attribtues
+		// Remove whitespaces from starting and ending of shortcode attributes
 		$atts = array_map( 'trim', $atts );
 		$class = '';
 

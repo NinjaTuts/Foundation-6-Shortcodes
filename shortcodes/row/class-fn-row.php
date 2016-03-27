@@ -17,7 +17,7 @@ Class FN_Row {
 			'fluid' 								=> null,
 		), $atts, 'fn_row' );
 
-		// Remove whitespaces from starting and ending of shortcode attribtues
+		// Remove whitespaces from starting and ending of shortcode attributes
 		$atts = array_map( 'trim', $atts );
 		$class = ' row ';
 

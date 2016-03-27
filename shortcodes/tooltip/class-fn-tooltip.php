@@ -18,7 +18,7 @@ Class FN_Tooltip {
 			'title' 										=> null,
 		), $atts, 'fn_tooltip' );
 
-		// Remove whitespaces from starting and ending of shortcode attribtues
+		// Remove whitespaces from starting and ending of shortcode attributes
 		$atts = array_map( 'trim', $atts );
 		$default_class = ' has-tip ';
 		$class = '';

@@ -18,7 +18,7 @@ Class FN_Flex_Video {
 			'vimeo' 								=> null,
 		), $atts, 'fn_flex_video' );
 
-		// Remove whitespaces from starting and ending of shortcode attribtues
+		// Remove whitespaces from starting and ending of shortcode attributes
 		$atts = array_map( 'trim', $atts );
 		$default_class = ' flex-video ';
 		$class = '';

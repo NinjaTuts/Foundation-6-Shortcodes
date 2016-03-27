@@ -17,7 +17,7 @@ Class FN_Label {
 			'type' 								=> null,
 		), $atts, 'fn_label' );
 
-		// Remove whitespaces from starting and ending of shortcode attribtues
+		// Remove whitespaces from starting and ending of shortcode attributes
 		$atts = array_map( 'trim', $atts );
 		$default_class = ' label ';
 		$class = '';
