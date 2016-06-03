@@ -11,7 +11,8 @@
 .npmignore
 .nvmrc
 .npmrc
-
+.idea
+.idea/**/*
 #sublime files
 *.sublime-*
 Thumbs.db
